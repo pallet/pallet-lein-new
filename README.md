@@ -8,20 +8,15 @@ infrastructure projects.
 Install the plugin with [lein][lein]:
 
 ```bash
-lein plugin install lein-pallet-new 0.1.0-SNAPSHOT
+lein plugin install lein-newnew 0.1.2
+lein plugin install org.cloudhoist/lein-pallet-new 0.1.0
 ```
 
-For a list of pallet templates and options,
+To create a new project using pallet,
 
 ```bash
-lein pallet-new
+lein new pallet my-project
 ```
-
-## Installation
-
-Add the plugin to your `project.clj` file.
-
-    :dev-dependencies [[org.cloudhoist/pallet-lein "0.4.0"]]
 
 ## License
 

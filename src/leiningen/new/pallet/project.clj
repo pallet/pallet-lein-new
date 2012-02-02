@@ -4,14 +4,19 @@
                  {{#with-automated-admin-user-dependency}}
                  [org.cloudhoist/automated-admin-user "0.6.0"]
                  {{/with-automated-admin-user-dependency}}
+                 {{#with-jclouds}}
+                 [org.jclouds.driver/jclouds-slf4j "{{jclouds-version}}"]
+                 [org.jclouds/jclouds-all "{{jclouds-version}}"]
+                 {{/with-jclouds}}
+                 {{#with-pallet-jclouds}}
+                 [org.cloudhoist/pallet-jclouds "{{pallet-jclouds-version}}"]
+                 {{/with-pallet-jclouds}}
+                 {{#with-pallet-vmfest}}
+                 [org.cloudhoist/pallet-vmfest "{{pallet-vmfest-version}}"]
+                 {{/with-pallet-vmfest}}
                  [org.slf4j/slf4j-api "1.6.1"]
                  [ch.qos.logback/logback-core "1.0.0"]
-                 [ch.qos.logback/logback-classic "1.0.0"]
-                 {{#with-jclouds}}
-                 ;; [org.jclouds.driver/jclouds-slf4j "{{jclouds-version}}"]
-                 ;; [org.jclouds/jclouds-all "{{jclouds-version}}"]
-                 [org.cloudhoist/pallet-jclouds "{{jclouds-version}}"]
-                 {{/with-jclouds}}]
+                 [ch.qos.logback/logback-classic "1.0.0"]]
   :dev-dependencies [[org.cloudhoist/pallet "{{pallet-version}}" :type "test-jar"]
                      {{#with-vmfest}}
                      [vmfest "{{vmfest-version}}"]

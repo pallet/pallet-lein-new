@@ -6,12 +6,16 @@
 
 (def default-features
   {:with-pallet true
-   :pallet-version "0.6.5"
+   :pallet-version "0.6.7"
    :project-version "0.1.0-SNAPSHOT"
    :with-vmfest nil
    :vmfest-version "0.2.3"
    :with-jclouds nil
    :jclouds-version "1.2.1"
+   :with-pallet-vmfest nil
+   :pallet-vmfest-version "0.1.0-SNAPSHOT"
+   :with-pallet-jclouds nil
+   :pallet-jclouds-version "0.1.0-SNAPSHOT"
    :with-growl nil
    :pallet-growl-version "0.1.0-SNAPSHOT"})
 
@@ -67,4 +71,5 @@
     (->files
      data
      ["src/{{sanitized}}/groups/{{sanitized}}.clj" (render "group.clj" data)]
+     ["resources/logback.xml" (render "logback.xml" data)]
      ["project.clj" (render "project.clj" data)])))
