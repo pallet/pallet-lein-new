@@ -9,7 +9,7 @@ Install the plugin with [lein][lein]:
 
 ```bash
 lein plugin install lein-newnew 0.1.2
-lein plugin install lein-pallet-new 0.1.0-SNAPSHOT
+lein plugin install org.cloudhoist/lein-pallet-new 0.1.0-SNAPSHOT
 ```
 
 To create a new project using pallet,
