@@ -12,6 +12,10 @@
    :vmfest-version "0.2.3"
    :with-jclouds nil
    :jclouds-version "1.2.1"
+   :with-pallet-vmfest nil
+   :pallet-vmfest-version "0.1.0-SNAPSHOT"
+   :with-pallet-jclouds nil
+   :pallet-jclouds-version "0.1.0-SNAPSHOT"
    :with-growl nil
    :pallet-growl-version "0.1.0-SNAPSHOT"})
 
