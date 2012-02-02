@@ -6,7 +6,7 @@
 
 (def default-features
   {:with-pallet true
-   :pallet-version "0.6.5"
+   :pallet-version "0.6.7"
    :project-version "0.1.0-SNAPSHOT"
    :with-vmfest nil
    :vmfest-version "0.2.3"
