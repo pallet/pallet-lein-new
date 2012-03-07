@@ -7,6 +7,7 @@
                  ;; To get started we include all jclouds compute providers.
                  ;; You may wish to replace this with the specific jclouds
                  ;; providers you use, to reduce dependency sizes.
+                 [org.jclouds/jclouds-allblobstore "{{jclouds-version}}"]
                  [org.jclouds/jclouds-allcompute "{{jclouds-version}}"]
                  [org.jclouds.driver/jclouds-slf4j "{{jclouds-version}}"]
                  {{/with-pallet-jclouds}}
