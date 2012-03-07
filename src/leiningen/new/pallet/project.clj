@@ -1,6 +1,7 @@
 (defproject {{name}} "{{project-version}}"
   :description "FIXME Pallet project for {{name}}"
-  :dependencies [[org.cloudhoist/pallet "{{pallet-version}}"]
+  :dependencies [[org.clojure/clojure "1.3.0"]
+                 [org.cloudhoist/pallet "{{pallet-version}}"]
                  {{#with-pallet-jclouds}}
                  [org.cloudhoist/pallet-jclouds "{{pallet-jclouds-version}}"]
                  ;; To get started we include all jclouds compute providers.
