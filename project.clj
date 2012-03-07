@@ -1,3 +1,7 @@
-(defproject org.cloudhoist/lein-pallet-new "0.1.0"
+(defproject org.cloudhoist/lein-pallet-new "0.1.1-SNAPSHOT"
   :description "Leiningen plugin for creating Pallet projects"
-  :dependencies [[org.clojure/clojure "1.2.1"]])
+  :profiles {:dev {:dependencies [[org.clojure/clojure "1.2.1"]]}
+             :1.3 {:dependencies [[org.clojure/clojure "1.3.0"]]}
+             :1.4 {:dependencies [[org.clojure/clojure "1.4.0-beta2"]]}}
+  :checksum-deps true
+  :eval-in-leiningen true)
