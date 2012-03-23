@@ -13,7 +13,7 @@
    :with-pallet-vmfest nil
    :pallet-vmfest-version "0.2.0-beta.1"
    :with-pallet-jclouds true
-   :pallet-jclouds-version "1.3.0-alpha.1"
+   :pallet-jclouds-version "1.3.0-beta.1"
    :with-growl nil
    :pallet-growl-version "0.1.0-SNAPSHOT"})
 
@@ -44,7 +44,8 @@
   [pallet-jclouds-version]
   (cond
     (re-find #"1.4." pallet-jclouds-version) "1.4.0-rc.1"
-    (re-find #"1.3." pallet-jclouds-version) "1.3.1"
+    (re-find #"1.3.0-alpha" pallet-jclouds-version) "1.3.1"
+    (re-find #"1.3." pallet-jclouds-version) "1.3.2"
     (re-find #"1.2." pallet-jclouds-version) "1.2.1"
     :else "1.3.1"))
 
