@@ -5,11 +5,11 @@ infrastructure projects.
 
 ## Usage
 
-Install the plugin with [lein][lein]:
+For lein 1 you will need to install the plugin with [lein][lein]:
 
 ```bash
-lein plugin install lein-newnew 0.1.2
-lein plugin install org.cloudhoist/lein-pallet-new 0.1.0
+lein plugin install lein-newnew 0.2.6
+lein plugin install pallet/lein-template 0.2.0
 ```
 
 To create a new project using pallet,
