@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.1
+
+- Add pallet-lein to generated project.clj
+
 ## 0.2.0
 
 - Update pallet version to 0.7.0
