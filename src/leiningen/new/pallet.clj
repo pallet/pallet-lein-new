@@ -6,16 +6,14 @@
 
 (def default-features
   {:with-pallet true
-   :pallet-version "0.6.7"
+   :pallet-version "0.7.0"
    :project-version "0.1.0-SNAPSHOT"
-   :with-vmfest nil
-   :vmfest-version "0.2.3"
-   :with-jclouds nil
-   :jclouds-version "1.2.1"
+   :vmfest-version nil
+   :jclouds-version nil
    :with-pallet-vmfest nil
-   :pallet-vmfest-version "0.1.0-SNAPSHOT"
-   :with-pallet-jclouds nil
-   :pallet-jclouds-version "0.1.0-SNAPSHOT"
+   :pallet-vmfest-version "0.2.0-beta.3"
+   :with-pallet-jclouds true
+   :pallet-jclouds-version "1.3.0-beta.1"
    :with-growl nil
    :pallet-growl-version "0.1.0-SNAPSHOT"})
 
@@ -33,7 +31,7 @@
          #(vector (keyword (first %)) (second %))
          (partition 2 features))))
 
-;; Once all features are specified, we infer some values for the templates.
+;;; Once all features are specified, we infer some values for the templates.
 (defn with-automated-admin-user-dependency
   [data]
   (if (nil? (:with-automated-admin-user-dependency data))
@@ -41,6 +39,22 @@
       (assoc data :with-automated-admin-user-dependency true)
       data)
     data))
+
+(defn pallet-jclouds->jclouds
+  [pallet-jclouds-version]
+  (cond
+    (re-find #"1.4." pallet-jclouds-version) "1.4.0-rc.1"
+    (re-find #"1.3.0-alpha" pallet-jclouds-version) "1.3.1"
+    (re-find #"1.3." pallet-jclouds-version) "1.3.2"
+    (re-find #"1.2." pallet-jclouds-version) "1.2.1"
+    :else "1.3.1"))
+
+(defn with-jclouds-version-for-pallet-jclouds
+  [data]
+  (let [p-j (:pallet-jclouds-version data)
+        j (:jclouds-version data)]
+    (if (and p-j (not j))
+      (assoc data :jclouds-version (pallet-jclouds->jclouds p-j)))))
 
 (defn with-feature-or-version
   [data with-key version-key]
@@ -56,8 +70,12 @@
    (with-feature-or-version :with-vmfest :vmfest-version)
    (with-feature-or-version :with-growl :pallet-growl-version)
    (with-feature-or-version :with-jclouds :jclouds-version)
+   (with-feature-or-version :with-pallet-jclouds :pallet-jclouds-version)
+   (with-feature-or-version :with-pallet-vmfest :pallet-vmfest-version)
+   with-jclouds-version-for-pallet-jclouds
    with-automated-admin-user-dependency))
 
+;;; main template entry point
 (defn pallet
   "A Pallet project template. The template requires a project name, and an
    optional list of feature/value pairs."

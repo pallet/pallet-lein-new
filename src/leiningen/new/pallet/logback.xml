@@ -49,19 +49,19 @@
     </encoder>
   </appender>
 
-  <logger name="jclouds.headers" level="DEBUG">
+  <logger name="jclouds.headers" level="INFO">
     <appender-ref ref="WIREFILE" />
   </logger>
 
-  <logger name="jclouds.wire" level="DEBUG">
+  <logger name="jclouds.wire" level="INFO">
     <appender-ref ref="WIREFILE" />
   </logger>
 
-  <logger name="jclouds.compute" level="DEBUG">
+  <logger name="jclouds.compute" level="INFO">
     <appender-ref ref="COMPUTEFILE" />
   </logger>
 
-  <logger name="jclouds.ssh" level="DEBUG">
+  <logger name="jclouds.ssh" level="INFO">
     <appender-ref ref="COMPUTEFILE" />
   </logger>
 

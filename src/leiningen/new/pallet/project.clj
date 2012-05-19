@@ -1,15 +1,15 @@
 (defproject {{name}} "{{project-version}}"
   :description "FIXME Pallet project for {{name}}"
-  :dependencies [[org.cloudhoist/pallet "{{pallet-version}}"]
-                 {{#with-automated-admin-user-dependency}}
-                 [org.cloudhoist/automated-admin-user "0.6.0"]
-                 {{/with-automated-admin-user-dependency}}
-                 {{#with-jclouds}}
-                 [org.jclouds.driver/jclouds-slf4j "{{jclouds-version}}"]
-                 [org.jclouds/jclouds-all "{{jclouds-version}}"]
-                 {{/with-jclouds}}
+  :dependencies [[org.clojure/clojure "1.3.0"]
+                 [org.cloudhoist/pallet "{{pallet-version}}"]
                  {{#with-pallet-jclouds}}
                  [org.cloudhoist/pallet-jclouds "{{pallet-jclouds-version}}"]
+                 ;; To get started we include all jclouds compute providers.
+                 ;; You may wish to replace this with the specific jclouds
+                 ;; providers you use, to reduce dependency sizes.
+                 [org.jclouds/jclouds-allblobstore "{{jclouds-version}}"]
+                 [org.jclouds/jclouds-allcompute "{{jclouds-version}}"]
+                 [org.jclouds.driver/jclouds-slf4j "{{jclouds-version}}"]
                  {{/with-pallet-jclouds}}
                  {{#with-pallet-vmfest}}
                  [org.cloudhoist/pallet-vmfest "{{pallet-vmfest-version}}"]
@@ -18,9 +18,6 @@
                  [ch.qos.logback/logback-core "1.0.0"]
                  [ch.qos.logback/logback-classic "1.0.0"]]
   :dev-dependencies [[org.cloudhoist/pallet "{{pallet-version}}" :type "test-jar"]
-                     {{#with-vmfest}}
-                     [vmfest "{{vmfest-version}}"]
-                     {{/with-vmfest}}
                      {{#with-growl}}
                      [org.cloudhoist/pallet-growl "{{pallet-growl-version}}"]
                      {{/with-growl}}]
