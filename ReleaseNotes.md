@@ -1,8 +1,17 @@
 # Release Notes
 
+## 0.2.2
+
+- This is identical to 0.2.1, but is built with lein 1.x, to ensure that
+  it is compatible with lein 1.x plugin install.
+
 ## 0.2.1
 
 - Add pallet-lein to generated project.clj
+
+### Known Issues
+
+- Does not work with lein 1.x
 
 ## 0.2.0
 
