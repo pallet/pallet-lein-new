@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.3
+
+- Update to pallet 0.7.1
+
 ## 0.2.2
 
 - This is identical to 0.2.1, but is built with lein 1.x, to ensure that
