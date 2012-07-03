@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.4
+
+- Fix project.clj to use :plugins for the pallet plugin
+
 ## 0.2.3
 
 - Update to pallet 0.7.1

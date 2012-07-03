@@ -9,7 +9,7 @@ For lein 1 you will need to install the plugin with [lein][lein]:
 
 ```bash
 lein plugin install lein-newnew 0.3.4
-lein plugin install pallet/lein-template 0.2.3
+lein plugin install pallet/lein-template 0.2.4
 ```
 
 To create a new project using pallet,
