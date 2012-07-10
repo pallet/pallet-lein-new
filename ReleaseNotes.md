@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.5
+
+- Update to pallet-lein 0.5.1
+
 ## 0.2.4
 
 - Fix project.clj to use :plugins for the pallet plugin
