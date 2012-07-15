@@ -23,7 +23,8 @@
                      [org.cloudhoist/pallet-growl "{{pallet-growl-version}}"]
                      {{/with-growl}}
                      [org.cloudhoist/pallet-lein "0.5.1"]]
-  :profiles {:dev {:plugins [[org.cloudhoist/pallet-lein "0.5.1"]]}}
+  :profiles {:dev {:dependencies [[org.cloudhoist/pallet "0.7.1" :classifier "tests"]]
+                   :plugins [[org.cloudhoist/pallet-lein "0.5.1"]]}}
   :local-repo-classpath true
   :repositories
   {"sonatype-snapshots" "https://oss.sonatype.org/content/repositories/snapshots"
