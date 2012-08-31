@@ -9,21 +9,26 @@
                  ;; providers you use, to reduce dependency sizes.
                  [org.jclouds/jclouds-allblobstore "{{jclouds-version}}"]
                  [org.jclouds/jclouds-allcompute "{{jclouds-version}}"]
-                 [org.jclouds.driver/jclouds-slf4j "{{jclouds-version}}"]
+                 [org.jclouds.driver/jclouds-slf4j "{{jclouds-version}}"
+                  ;; the declared version is old and can overrule the
+                  ;; resolved version
+                  :exclusions [org.slf4j/slf4j-api]]
+                 [org.jclouds.driver/jclouds-sshj "{{jclouds-version}}"]
                  {{/with-pallet-jclouds}}
                  {{#with-pallet-vmfest}}
                  [org.cloudhoist/pallet-vmfest "{{pallet-vmfest-version}}"]
                  {{/with-pallet-vmfest}}
-                 [org.slf4j/slf4j-api "1.6.1"]
-                 [ch.qos.logback/logback-core "1.0.0"]
                  [ch.qos.logback/logback-classic "1.0.0"]]
   :dev-dependencies [[org.cloudhoist/pallet
                       "{{pallet-version}}" :type "test-jar"]
                      {{#with-growl}}
                      [org.cloudhoist/pallet-growl "{{pallet-growl-version}}"]
                      {{/with-growl}}
-                     [org.cloudhoist/pallet-lein "0.5.1"]]
-  :profiles {:dev {:plugins [[org.cloudhoist/pallet-lein "0.5.1"]]}}
+                     [org.cloudhoist/pallet-lein "0.5.2"]]
+  :profiles {:dev
+             {:dependencies
+              [[org.cloudhoist/pallet "{{pallet-version}}" :classifier "tests"]]
+              :plugins [[org.cloudhoist/pallet-lein "0.5.2"]]}}
   :local-repo-classpath true
   :repositories
   {"sonatype-snapshots" "https://oss.sonatype.org/content/repositories/snapshots"

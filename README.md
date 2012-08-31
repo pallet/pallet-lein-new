@@ -8,8 +8,8 @@ infrastructure projects.
 For lein 1 you will need to install the plugin with [lein][lein]:
 
 ```bash
-lein plugin install lein-newnew 0.3.4
-lein plugin install pallet/lein-template 0.2.5
+lein plugin install lein-newnew 0.3.5
+lein plugin install pallet/lein-template 0.2.6
 ```
 
 To create a new project using pallet,
