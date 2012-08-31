@@ -16,7 +16,7 @@ echo -n "commiting project.clj, release notes and readme.  enter to continue:" \
 && git add project.clj ReleaseNotes.md README.md \
 && git commit -m "Updated project.clj, release notes and readme for $version" \
 && echo -n "Peform release.  enter to continue:" && read x \
-&& lein2 test \
-&& lein2 deploy clojars \
+&& lein test \
+&& lein deploy clojars \
 && git flow release finish $version \
 && echo "Now push and upload to github"
