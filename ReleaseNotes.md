@@ -1,5 +1,12 @@
 # Release Notes
 
+## 0.2.6
+
+- Update to latest release versions
+  pallet 0.7.2 lein-pallet 0.5.2 pallet-jclouds 1.4.2
+
+- Add test jar to lein2-style dependencies
+
 ## 0.2.5
 
 - Update to pallet-lein 0.5.1
