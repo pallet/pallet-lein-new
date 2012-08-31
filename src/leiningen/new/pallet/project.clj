@@ -32,4 +32,6 @@
   :local-repo-classpath true
   :repositories
   {"sonatype-snapshots" "https://oss.sonatype.org/content/repositories/snapshots"
-   "sonatype" "https://oss.sonatype.org/content/repositories/releases/"})
+   "sonatype" "https://oss.sonatype.org/content/repositories/releases/"}
+  :repl-options {:init (do (require '{{name}}.repl)
+                           ({{name}}.repl/force-slf4j))})
