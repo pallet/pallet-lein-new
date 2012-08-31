@@ -1,5 +1,11 @@
 # Release Notes
 
+## 0.2.7
+
+- Add workaround for commons-logging in repl task
+  The lein repl task adds commons-logging to our classpath, messing up the
+  logging configuration. This forces use of slf4j.
+
 ## 0.2.6
 
 - Update to latest release versions
