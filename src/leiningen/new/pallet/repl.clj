@@ -1,4 +1,4 @@
-(ns {{sanitized}}.repl
+(ns {{name}}.repl
   (:require
    clojure.tools.logging
    clojure.tools.logging.slf4j))
