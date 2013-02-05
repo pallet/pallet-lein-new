@@ -1,5 +1,13 @@
 # Release Notes
 
+## 0.2.8
+
+- Add logging block for clj-ssh
+  add the block to log clj-ssh to the compute logfile and a comment making
+  it clear how to run on dubugging for ssh keys.
+
+- s/sanitized/name/ in repl.clj. Fixes #2
+
 ## 0.2.7
 
 - Add workaround for commons-logging in repl task
