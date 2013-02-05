@@ -1,8 +1,9 @@
-(defproject pallet/lein-template "0.2.7"
+(defproject pallet/lein-template "0.2.8"
   :description "Leiningen plugin for creating Pallet projects"
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.2.1"]]}
              :1.3 {:dependencies [[org.clojure/clojure "1.3.0"]]}
-             :1.4 {:dependencies [[org.clojure/clojure "1.4.0-beta2"]]}}
+             :1.4 {:dependencies [[org.clojure/clojure "1.4.0"]]}
+             :1.5 {:dependencies [[org.clojure/clojure "1.5.0-alpha7"]]}}
   :checksum-deps true
   :eval-in-leiningen true
   :url "https://github.com/pallet/pallet-lein-new"

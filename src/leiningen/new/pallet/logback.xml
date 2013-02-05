@@ -65,6 +65,11 @@
     <appender-ref ref="COMPUTEFILE" />
   </logger>
 
+  <logger name="clj-ssh.ssh" level="INFO">
+    <!-- Set this to TRACE to debug ssh keys -->
+    <appender-ref ref="COMPUTEFILE" />
+  </logger>
+
   <logger name="pallet" level="DEBUG">
     <appender-ref ref="PALLETFILE" />
   </logger>
