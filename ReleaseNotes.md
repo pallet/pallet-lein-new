@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.9
+
+- Update to pallet 0.7.3
+
 ## 0.2.8
 
 - Add logging block for clj-ssh
