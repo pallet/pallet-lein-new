@@ -6,14 +6,14 @@
 
 (def default-features
   {:with-pallet true
-   :pallet-version "0.7.2"
+   :pallet-version "0.7.3"
    :project-version "0.1.0-SNAPSHOT"
    :vmfest-version nil
    :jclouds-version nil
    :with-pallet-vmfest nil
-   :pallet-vmfest-version "0.2.0-beta.3"
+   :pallet-vmfest-version "0.2.4"
    :with-pallet-jclouds true
-   :pallet-jclouds-version "1.4.2"
+   :pallet-jclouds-version "1.4.3"
    :with-growl nil
    :pallet-growl-version "0.1.0-SNAPSHOT"})
 
@@ -43,6 +43,7 @@
 (defn pallet-jclouds->jclouds
   [pallet-jclouds-version]
   (cond
+    (re-find #"1.5." pallet-jclouds-version) "1.5.7"
     (re-find #"1.4." pallet-jclouds-version) "1.4.2"
     (re-find #"1.3.0-alpha" pallet-jclouds-version) "1.3.2"
     (re-find #"1.3." pallet-jclouds-version) "1.3.2"
