@@ -18,7 +18,7 @@ to work:
 
 ```bash
 lein plugin install lein-newnew 0.3.5
-lein plugin install pallet/lein-template 0.2.9
+lein plugin install pallet/lein-template 0.2.10
 ```
 ## License
 
