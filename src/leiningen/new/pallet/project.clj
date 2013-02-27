@@ -28,10 +28,11 @@
   :profiles {:dev
              {:dependencies
               [[org.cloudhoist/pallet "{{pallet-version}}" :classifier "tests"]]
-              :plugins [[org.cloudhoist/pallet-lein "0.5.2"]]}}
+              :plugins [[org.cloudhoist/pallet-lein "0.5.2"]]}
+             :leiningen/reply
+             {:dependencies [[org.slf4j/jcl-over-slf4j "1.7.2"]]
+              :exclusions [commons-logging]}}
   :local-repo-classpath true
   :repositories
   {"sonatype-snapshots" "https://oss.sonatype.org/content/repositories/snapshots"
-   "sonatype" "https://oss.sonatype.org/content/repositories/releases/"}
-  :repl-options {:init (do (require '{{name}}.repl)
-                           ({{name}}.repl/force-slf4j))})
+   "sonatype" "https://oss.sonatype.org/content/repositories/releases/"})

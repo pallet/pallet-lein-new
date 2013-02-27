@@ -91,6 +91,5 @@
     (->files
      data
      ["src/{{sanitized}}/groups/{{sanitized}}.clj" (render "group.clj" data)]
-     ["src/{{sanitized}}/repl.clj" (render "repl.clj" data)]
      ["resources/logback.xml" (render "logback.xml" data)]
      ["project.clj" (render "project.clj" data)])))
