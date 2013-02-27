@@ -1,6 +1,6 @@
 (defproject {{name}} "{{project-version}}"
   :description "FIXME Pallet project for {{name}}"
-  :dependencies [[org.clojure/clojure "1.3.0"]
+  :dependencies [[org.clojure/clojure "1.4.0"]
                  [org.cloudhoist/pallet "{{pallet-version}}"]
                  {{#with-pallet-jclouds}}
                  [org.cloudhoist/pallet-jclouds "{{pallet-jclouds-version}}"]
