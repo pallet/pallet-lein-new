@@ -1,5 +1,13 @@
 # Release Notes
 
+## 0.2.11
+
+- Update to pallet 0.7.4 and enable 0.8.0
+
+- Output template data when DEBUG is set
+
+- Add README to template
+
 ## 0.2.10
 
 - Update to produce a clojure 1.4 project
