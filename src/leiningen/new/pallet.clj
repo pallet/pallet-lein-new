@@ -88,6 +88,7 @@
               {:name proj-name
                :sanitized (sanitize proj-name)})
         data (infer-features data)]
+    (debug "data is" (pr-str data))
     (->files
      data
      ["src/{{sanitized}}/groups/{{sanitized}}.clj" (render "group.clj" data)]
