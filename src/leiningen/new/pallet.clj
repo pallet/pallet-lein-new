@@ -92,4 +92,5 @@
      data
      ["src/{{sanitized}}/groups/{{sanitized}}.clj" (render "group.clj" data)]
      ["resources/logback.xml" (render "logback.xml" data)]
-     ["project.clj" (render "project.clj" data)])))
+     ["project.clj" (render "project.clj" data)]
+     ["README.md" (render "README.md" data)])))
