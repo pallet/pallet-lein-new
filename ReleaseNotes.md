@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.12
+
+- Update to pallet 0.8.0-RC.1 as default
+
 ## 0.2.11
 
 - Update to pallet 0.7.4 and enable 0.8.0
