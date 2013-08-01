@@ -8,14 +8,14 @@
 
 (def default-features
   {:with-pallet true
-   :pallet-version "0.7.4"
+   :pallet-version "0.8.0-RC.1"
    :project-version "0.1.0-SNAPSHOT"
    :vmfest-version nil
    :jclouds-version nil
    :with-pallet-vmfest nil
-   :pallet-vmfest-version "0.2.4"
+   :pallet-vmfest-version "0.3.0-alpha.5"
    :with-pallet-jclouds true
-   :pallet-jclouds-version "1.5.2"
+   :pallet-jclouds-version "1.5.3"
    :with-growl nil
    :pallet-growl-version "0.1.0-SNAPSHOT"})
 
@@ -42,11 +42,36 @@
       data)
     data))
 
-(defn pallet->group-id
-  [pallet-version]
+(defn pallet->pallet-lein-version
+  [version]
   (cond
-    (re-find #"0.8." pallet-version) "com.palletops"
-    :else "org.cloudhoist"))
+    (re-find #"^0\.[1-7]\." version) "1.5.2"
+    :else "0.8.0-alpha.1"))
+
+(defn pallet->group-id
+  [version]
+  (cond
+    (re-find #"^0\.[1-7]\." version) "org.cloudhoist"
+    :else "com.palletops"))
+
+(defn pallet-lein->group-id
+  [version]
+  (cond
+    (re-find #"^0\.[1-7]\." version) "org.cloudhoist"
+    :else "com.palletops"))
+
+(defn pallet-jclouds->group-id
+  [version]
+  (cond
+    (re-find #"^1\.[1-4]\." version) "org.cloudhoist"
+    (re-find #"^1\.5\.[0-2]$" version) "org.cloudhoist"
+    :else "com.palletops"))
+
+(defn pallet-vmfest->group-id
+  [version]
+  (cond
+    (re-find #"^0\.[1-2]\." version) "org.cloudhoist"
+    :else "com.palletops"))
 
 (defn with-groupid-for-pallet
   [data]
@@ -56,11 +81,29 @@
       (assoc data :pallet-groupid (pallet->group-id p))
       data)))
 
-(defn pallet->pallet-lein-version
-  [pallet-version]
-  (cond
-    (re-find #"0.8." pallet-version) "0.6.0-beta.9"
-    :else "0.5.2"))
+(defn with-groupid-for-pallet-lein
+  [data]
+  (let [p (:pallet-lein-version data)
+        g (:pallet-lein-groupid data)]
+    (if (and p (not g))
+      (assoc data :pallet-lein-groupid (pallet-lein->group-id p))
+      data)))
+
+(defn with-groupid-for-pallet-jclouds
+  [data]
+  (let [p (:pallet-jclouds-version data)
+        g (:pallet-jclouds-groupid data)]
+    (if (and p (not g))
+      (assoc data :pallet-jclouds-groupid (pallet-jclouds->group-id p))
+      data)))
+
+(defn with-groupid-for-pallet-vmfest
+  [data]
+  (let [p (:pallet-vmfest-version data)
+        g (:pallet-vmfest-groupid data)]
+    (if (and p (not g))
+      (assoc data :pallet-vmfest-groupid (pallet-vmfest->group-id p))
+      data)))
 
 (defn with-pallet-lein-version-for-pallet
   [data]
@@ -104,8 +147,11 @@
    (with-feature-or-version :with-jclouds :jclouds-version)
    (with-feature-or-version :with-pallet-jclouds :pallet-jclouds-version)
    (with-feature-or-version :with-pallet-vmfest :pallet-vmfest-version)
-   with-groupid-for-pallet
    with-pallet-lein-version-for-pallet
+   with-groupid-for-pallet
+   with-groupid-for-pallet-lein
+   with-groupid-for-pallet-jclouds
+   with-groupid-for-pallet-vmfest
    with-jclouds-version-for-pallet-jclouds
    with-automated-admin-user-dependency))
 
