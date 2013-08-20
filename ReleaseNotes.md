@@ -1,5 +1,14 @@
 # Release Notes
 
+## 0.2.13
+
+- Add a pallet.clj file
+
+- Update to use plan-fn
+
+- Use :require :refer rather than :use :only
+  Update to latest best practice for namespace declarations.
+
 ## 0.2.12
 
 - Update to pallet 0.8.0-RC.1 as default
