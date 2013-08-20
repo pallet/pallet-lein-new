@@ -1,9 +1,8 @@
 (ns {{name}}.groups.{{name}}
     "Node defintions for {{name}}"
-    (:use
-     [pallet.core :only [group-spec server-spec node-spec]]
-     [pallet.crate.automated-admin-user :only [automated-admin-user]]
-     [pallet.phase :only [phase-fn]]))
+    (:require
+     [pallet.api :refer [group-spec server-spec node-spec plan-fn]]
+     [pallet.crate.automated-admin-user :refer [automated-admin-user]]))
 
 (def default-node-spec
   (node-spec
@@ -15,14 +14,14 @@
   base-server
   (server-spec
    :phases
-   {:bootstrap (phase-fn (automated-admin-user))}))
+   {:bootstrap (plan-fn (automated-admin-user))}))
 
 (def
   ^{:doc "Define a server spec for {{name}}"}
   {{name}}-server
   (server-spec
    :phases
-   {:configure (phase-fn
+   {:configure (plan-fn
                  ;; Add your crate class here
                  )}))
 
