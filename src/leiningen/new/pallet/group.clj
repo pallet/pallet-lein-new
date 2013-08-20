@@ -1,9 +1,9 @@
 (ns {{name}}.groups.{{name}}
     "Node defintions for {{name}}"
-    (:use
-     [pallet.core :only [group-spec server-spec node-spec]]
-     [pallet.crate.automated-admin-user :only [automated-admin-user]]
-     [pallet.phase :only [phase-fn]]))
+    (:require
+     [pallet.core :refer [group-spec server-spec node-spec]]
+     [pallet.crate.automated-admin-user :refer [automated-admin-user]]
+     [pallet.phase :refer [phase-fn]]))
 
 (def default-node-spec
   (node-spec
