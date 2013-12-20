@@ -1,5 +1,5 @@
 (ns {{name}}.groups.{{name}}
-    "Node defintions for {{name}}"
+    "Node definitions for {{name}}"
     (:require
      [pallet.api :refer [group-spec server-spec node-spec plan-fn]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]))
