@@ -8,12 +8,12 @@
 
 (def default-features
   {:with-pallet true
-   :pallet-version "0.8.0-RC.1"
+   :pallet-version "0.8.0-RC.6"
    :project-version "0.1.0-SNAPSHOT"
    :vmfest-version nil
    :jclouds-version nil
    :with-pallet-vmfest nil
-   :pallet-vmfest-version "0.3.0-alpha.5"
+   :pallet-vmfest-version "0.3.0-beta.2"
    :with-pallet-jclouds true
    :pallet-jclouds-version "1.5.3"
    :with-growl nil
