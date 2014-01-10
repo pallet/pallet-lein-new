@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.14
+
+- Update to pallet-RC.6 and pallet-vmfest 0.3.0-beta.2
+
 ## 0.2.13
 
 - Add a pallet.clj file
