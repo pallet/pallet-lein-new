@@ -1,25 +1,35 @@
 # lein-pallet-new
 
-A [leiningen][lein] plugin for creating [pallet][palletops] pallet
+A [leiningen 2.x][lein] plugin for creating [pallet][palletops] pallet
 infrastructure projects.
 
 ## Usage
 
-To create a new project using pallet,
+To create a new project using leiningen:,
 
 ```bash
 lein new pallet my-project
 ```
 
-## Lein 1 usage
+### Options
 
-For lein 1 you will need to install the plugin with [lein][lein], for the above
-to work:
+By default, the latest recommended versions of the libraries will be
+used. In case you need to use different versions, you can use the
+following options:
+
+ - `with-pallet` <version>
+ - `with-pallet-jclouds` <version>
+ - `with-pallet-vmfest` <true/false> :whether to use vmfest
+ - `with-vmfest` <version>
+ - `with-jclouds` <version>
+
+For example the following command will build the project using pallet
+version 0.8.0-RC.4 and pallet-vmfest 0.4.0-alpha.1:
 
 ```bash
-lein plugin install lein-newnew 0.3.5
-lein plugin install pallet/lein-template 0.2.14
+lein new pallet my-project with-pallet 0.8.0-RC.4 with-pallet-vmfest 0.4.0-alpha.1 
 ```
+
 ## License
 
 Copyright (C) 2012, 2013 Hugo Duncan
