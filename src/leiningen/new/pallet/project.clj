@@ -7,13 +7,13 @@
                  ;; To get started we include all jclouds compute providers.
                  ;; You may wish to replace this with the specific jclouds
                  ;; providers you use, to reduce dependency sizes.
-                 [org.jclouds/jclouds-allblobstore "{{jclouds-version}}"]
-                 [org.jclouds/jclouds-allcompute "{{jclouds-version}}"]
-                 [org.jclouds.driver/jclouds-slf4j "{{jclouds-version}}"
+                 [{{jclouds-groupid}}/jclouds-allblobstore "{{jclouds-version}}"]
+                 [{{jclouds-groupid}}/jclouds-allcompute "{{jclouds-version}}"]
+                 [{{jclouds-groupid}}.driver/jclouds-slf4j "{{jclouds-version}}"
                   ;; the declared version is old and can overrule the
                   ;; resolved version
                   :exclusions [org.slf4j/slf4j-api]]
-                 [org.jclouds.driver/jclouds-sshj "{{jclouds-version}}"]
+                 [{{jclouds-groupid}}.driver/jclouds-sshj "{{jclouds-version}}"]
                  {{/with-pallet-jclouds}}
                  {{#with-pallet-vmfest}}
                  [{{pallet-vmfest-groupid}}/pallet-vmfest "{{pallet-vmfest-version}}"]
