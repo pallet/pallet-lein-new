@@ -13,7 +13,7 @@
    :vmfest-version nil
    :jclouds-version nil
    :with-pallet-vmfest nil
-   :pallet-vmfest-version "0.3.0-beta.2"
+   :pallet-vmfest-version "0.4.0-alpha.1"
    :with-pallet-jclouds true
    :pallet-jclouds-version "1.7.0"
    :with-growl nil
