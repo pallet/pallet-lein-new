@@ -8,14 +8,14 @@
 
 (def default-features
   {:with-pallet true
-   :pallet-version "0.8.0-RC.6"
+   :pallet-version "0.8.0-RC.9"
    :project-version "0.1.0-SNAPSHOT"
    :vmfest-version nil
    :jclouds-version nil
    :with-pallet-vmfest nil
-   :pallet-vmfest-version "0.3.0-beta.2"
+   :pallet-vmfest-version "0.4.0-alpha.1"
    :with-pallet-jclouds true
-   :pallet-jclouds-version "1.5.3"
+   :pallet-jclouds-version "1.7.0"
    :with-growl nil
    :pallet-growl-version "0.1.0-SNAPSHOT"})
 
@@ -116,6 +116,7 @@
 (defn pallet-jclouds->jclouds
   [pallet-jclouds-version]
   (cond
+    (re-find #"1.7." pallet-jclouds-version) "1.7.1"
     (re-find #"1.5." pallet-jclouds-version) "1.5.5"
     (re-find #"1.4." pallet-jclouds-version) "1.4.2"
     (re-find #"1.3.0-alpha" pallet-jclouds-version) "1.3.2"
@@ -123,13 +124,21 @@
     (re-find #"1.2." pallet-jclouds-version) "1.2.1"
     :else "1.3.1"))
 
+(defn groupid-for-jclouds-version [jclouds-version]
+  (if (re-find #"1.7." jclouds-version)
+    "org.apache.jclouds"
+    "org.jclouds"))
+
 (defn with-jclouds-version-for-pallet-jclouds
   [data]
   (let [p-j (:pallet-jclouds-version data)
-        j (:jclouds-version data)]
+        j (:jclouds-version data)
+        inferred-jclouds-version (pallet-jclouds->jclouds p-j)]
     (if (and p-j (not j))
-      (assoc data :jclouds-version (pallet-jclouds->jclouds p-j))
-      data)))
+      (-> data (assoc :jclouds-version inferred-jclouds-version)
+          (assoc :jclouds-groupid (groupid-for-jclouds-version
+                                   inferred-jclouds-version)))
+      (assoc data :jclouds-groupid (groupid-for-jclouds-version j)))))
 
 (defn with-feature-or-version
   [data with-key version-key]
