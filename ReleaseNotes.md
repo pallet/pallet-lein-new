@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.16
+
+- Update pallet-jclouds to 1.7.1 for backwards compat w/jdk1.6.
+
 ## 0.2.15
 
 - Prepare for releases with lein-pallet-release
