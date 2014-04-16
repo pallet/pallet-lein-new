@@ -1,5 +1,15 @@
 # Release Notes
 
+## 0.2.15
+
+- Prepare for releases with lein-pallet-release
+
+- Update README w/ info on options.
+
+- Upgrade default pallet-vmfest to 0.4.0-alpha.1 (for VBox 4.3.x)
+
+- add support for pallet-jclouds-1.7.0 and make it the default
+
 ## 0.2.14
 
 - Update to pallet-RC.6 and pallet-vmfest 0.3.0-beta.2
