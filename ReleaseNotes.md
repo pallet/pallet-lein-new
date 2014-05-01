@@ -1,4 +1,6 @@
-# Release Notes
+## 0.2.17
+
+- Update to pallet-jclouds 1.7.3 -- resolves issue with java 6
 
 ## 0.2.16
 

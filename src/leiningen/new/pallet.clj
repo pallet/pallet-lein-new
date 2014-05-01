@@ -15,7 +15,7 @@
    :with-pallet-vmfest nil
    :pallet-vmfest-version "0.4.0-alpha.1"
    :with-pallet-jclouds true
-   :pallet-jclouds-version "1.7.1"
+   :pallet-jclouds-version "1.7.3"
    :with-growl nil
    :pallet-growl-version "0.1.0-SNAPSHOT"})
 
@@ -116,7 +116,7 @@
 (defn pallet-jclouds->jclouds
   [pallet-jclouds-version]
   (cond
-    (re-find #"1.7." pallet-jclouds-version) "1.7.1"
+    (re-find #"1.7." pallet-jclouds-version) "1.7.2"
     (re-find #"1.5." pallet-jclouds-version) "1.5.5"
     (re-find #"1.4." pallet-jclouds-version) "1.4.2"
     (re-find #"1.3.0-alpha" pallet-jclouds-version) "1.3.2"
