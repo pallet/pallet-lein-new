@@ -1,3 +1,7 @@
+## 0.2.18
+
+- Re-release. Pushed wrong SHA.
+
 ## 0.2.17
 
 - Update to pallet-jclouds 1.7.3 -- resolves issue with java 6
